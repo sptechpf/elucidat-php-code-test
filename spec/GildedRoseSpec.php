@@ -3,9 +3,6 @@
 use App\Item;
 use App\GildedRose;
 
-/*
- * Your work begins on LINE 249.
- */
 describe('Gilded Rose', function () {
     describe('next day', function () {
         context('normal Items', function () {
