@@ -83,10 +83,10 @@ describe('Gilded Rose', function () {
                 expect($gr->getItem(0)->sellIn)->toBe(5);
             });
             it('updates Sulfuras items on the sell date', function () {
-                $gr = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 10, 5)]);
+                $gr = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 10, 0)]);
                 $gr->nextDay();
                 expect($gr->getItem(0)->quality)->toBe(10);
-                expect($gr->getItem(0)->sellIn)->toBe(5);
+                expect($gr->getItem(0)->sellIn)->toBe(0);
             });
             it('updates Sulfuras items after the sell date', function () {
                 $gr = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 10, -1)]);
