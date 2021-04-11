@@ -55,3 +55,15 @@ Feel free to make any changes to the `nextDay` method and add any new code as lo
 still works correctly. However, do not alter the `Item` class or `items` property as those belong to the goblin in the corner who will insta-rage you as he doesn't believe in shared code ownership (you can make the `nextDay` method and `items` property static if you like, we'll cover for you).
 
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
+
+## Updates
+
+The code has been refactored to delegate the next day processing to each item.
+
+All items extend a new AbstractItem class which handles common Item functionality like increase/decrease of quality or sellIn value. At the same time it forces an Item class (existing or new) to implement its own version of the next day handling. Unit tests have been updated to reflect the latest code changes.
+
+There is scope for further potential improvements during the next iteration, like:
+- create Factory classes to initiate Item entities
+- change visibility of the Item class properties to "protected" to prevent code not related to Items changing values directly
+- log when an item which does not extend AbstractItem class is found on the list of items to be processed
+- force strict_types globally (if possible)
